@@ -15,13 +15,13 @@
   <img id="profile-picture" src="assets/apps_profile.png" alt="Profile Picture" width="200" height="200">
 </div>
 <div class="tabbar">
-  <button id="appsTab" onclick="showApps()">Apps</button>
-  <button id="musicTab" onclick="showMusic()">Music</button>
+  <button id="appsTab" class="cool-button" disabled="" onclick="showApps()">Apps</button>
+  <button id="musicTab" class="cool-button" onclick="showMusic()">Music</button>
 </div>
 <div id="apps" class="section">
-  <button onclick="showAppsAbout()">About</button>
-  <button onclick="showKnowtrail()">KnowTrail</button>
-  <button onclick="showPokeCalc()">Poke Calc</button>
+  <button class="cool-button" onclick="showAppsAbout()">About</button>
+  <button class="cool-button" onclick="showKnowtrail()">KnowTrail</button>
+  <button class="cool-button" onclick="showPokeCalc()">Poke Calc</button>
 </div>
 <div id="music" class="section" style="visibility: hidden;">
   <button onclick="showOutOfCircle()">Out Of The Circle</button>
@@ -35,6 +35,34 @@
   <div id="project-info-link" style="display: flex; justify-content: center; align-items: center;"></div>
 </div>
 <script>
+  const Modes = {
+    _currentMode: 'home', // private variable to hold current mode
+    HOME: 'home',
+    APPS: 'apps',
+    MUSIC: 'music',
+    get currentMode() {
+      return this._currentMode;
+    },
+    set currentMode(mode) {
+      if ([this.HOME, this.APPS, this.MUSIC].includes(mode)) {
+        this._currentMode = mode;
+
+        switch (mode) {
+          case this.HOME:
+            document.getElementById('appsTab').disabled = false
+            document.getElementById('musicTab').disabled = false
+          case this.APPS:
+            document.getElementById('appsTab').disabled = true
+            document.getElementById('musicTab').disabled = false
+          case this.MUSIC:
+            document.getElementById('appsTab').disabled = false
+            document.getElementById('musicTab').disabled = true
+        }
+      } else {
+        throw new Error('Invalid mode');
+      }
+    }
+  };
 
   function onLoadView() {
     apps.style.visibility = 'visible';
@@ -45,6 +73,7 @@
   }
 
   function showApps() {
+    currentMode = Modes.APPS
     const apps = document.getElementById('apps');
     const music = document.getElementById('music');
     const body = document.getElementById('body');
@@ -77,6 +106,7 @@
   }
 
   function showMusic() {
+    currentMode = Modes.MUSIC
     var apps = document.getElementById('apps');
     var music = document.getElementById('music');
     var body = document.getElementById('body');
