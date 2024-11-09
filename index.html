@@ -15,8 +15,8 @@
   <img id="profile-picture" src="assets/apps_profile.png" alt="Profile Picture" width="200" height="200">
 </div>
 <div class="tabbar">
-  <button id="appsTab" class="cool-button" disabled="" onclick="showApps()">Apps</button>
-  <button id="musicTab" class="cool-button" onclick="showMusic()">Music</button>
+  <button id="appsButton" class="cool-button" onclick="showApps()">Apps</button>
+  <button id="musicButton" class="cool-button" onclick="showMusic()">Music</button>
 </div>
 <div id="apps" class="section">
   <button class="cool-button" onclick="showAppsAbout()">About</button>
@@ -36,7 +36,7 @@
 </div>
 <script>
   const Modes = {
-    _currentMode: 'home', // private variable to hold current mode
+    _currentMode: 'home',
     HOME: 'home',
     APPS: 'apps',
     MUSIC: 'music',
@@ -49,14 +49,17 @@
 
         switch (mode) {
           case this.HOME:
-            document.getElementById('appsTab').disabled = false
-            document.getElementById('musicTab').disabled = false
+            appsButton.disabled = false
+            musicButton.disabled = false
+            break;
           case this.APPS:
-            document.getElementById('appsTab').disabled = true
-            document.getElementById('musicTab').disabled = false
+            appsButton.disabled = true
+            musicButton.disabled = false
+            break;
           case this.MUSIC:
-            document.getElementById('appsTab').disabled = false
-            document.getElementById('musicTab').disabled = true
+            appsButton.disabled = false
+            musicButton.disabled = true
+            break;
         }
       } else {
         throw new Error('Invalid mode');
@@ -73,10 +76,7 @@
   }
 
   function showApps() {
-    currentMode = Modes.APPS
-    const apps = document.getElementById('apps');
-    const music = document.getElementById('music');
-    const body = document.getElementById('body');
+    Modes.currentMode = Modes.APPS
 
     apps.style.visibility = 'visible';
     music.style.visibility = 'hidden';
@@ -106,17 +106,13 @@
   }
 
   function showMusic() {
-    currentMode = Modes.MUSIC
-    var apps = document.getElementById('apps');
-    var music = document.getElementById('music');
-    var body = document.getElementById('body');
+    Modes.currentMode = Modes.MUSIC
 
     apps.style.visibility = 'hidden';
     music.style.visibility = 'visible';
 
     body.className = 'dark-theme loaded';
 
-    // Trigger reflow to restart animation
     void music.offsetWidth;
     music.classList.add('fade-in');
 
@@ -174,6 +170,12 @@
   });
 
   window.onload = onLoadView;
+
+  const apps = document.getElementById('apps');
+  const music = document.getElementById('music');
+  const body = document.getElementById('body');
+  const appsButton = document.getElementById('appsButton');
+  const musicButton = document.getElementById('musicButton');
 
   const AboutTexts = {
     ANTARES_LABS: "My name is Apostolos Apostolidis, but in case this sounds hard, you can just call me Tolis.\n" +
