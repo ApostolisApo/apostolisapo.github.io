@@ -23,9 +23,8 @@
   <button class="cool-button" onclick="showKnowtrail()">KnowTrail</button>
   <button class="cool-button" onclick="showPokeCalc()">Poke Calc</button>
 </div>
-<div id="music" class="section" style="visibility: hidden;">
-  <button onclick="showOutOfCircle()">Out Of The Circle</button>
-  <button onclick="showJovian()">Jovian Outpost</button>
+<div>
+  <img id="music_banner" src="assets/transparent_jovian_outpost_banner.png" alt="Jovian Outpost" width="665" height="160">
 </div>
 <div id="project-info" class="text-field">
   <div id="project-info-container-1" style="display: flex; flex-direction: row">
@@ -69,7 +68,6 @@
 
   function onLoadView() {
     apps.style.visibility = 'visible';
-    music.style.visibility = 'hidden';
 
     body.className = 'light-theme loaded';
     updateAbout(null, null)
@@ -79,7 +77,6 @@
     Modes.currentMode = Modes.APPS
 
     apps.style.visibility = 'visible';
-    music.style.visibility = 'hidden';
 
     body.className = 'light-theme loaded';
 
@@ -107,19 +104,14 @@
 
   function showMusic() {
     Modes.currentMode = Modes.MUSIC
-
     apps.style.visibility = 'hidden';
-    music.style.visibility = 'visible';
 
     body.className = 'dark-theme loaded';
-
-    void music.offsetWidth;
-    music.classList.add('fade-in');
-
     const image = document.getElementById('profile-picture');
-    image.src = "assets/alt_music_profile.jpg";
+    image.src = "assets/jovian_artist.jpg";
     image.classList.toggle('flipped');
     updateAbout(AboutTexts.MUSIC, AboutImages.JOVIAN_OUTPOST)
+    showJovian()
   }
 
   function showKnowtrail() {
