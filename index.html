@@ -24,7 +24,7 @@
   <button class="cool-button" onclick="showPokeCalc()">Poke Calc</button>
 </div>
 <div>
-  <img id="music_banner" src="assets/transparent_jovian_outpost_banner.png" alt="Jovian Outpost" width="665" height="160">
+  <img id="music_banner" src="assets/transparent_jovian_outpost_banner.png" alt="Jovian Outpost" width="665" height="100" style="display: none">
 </div>
 <div id="project-info" class="text-field">
   <div id="project-info-container-1" style="display: flex; flex-direction: row">
@@ -87,6 +87,8 @@
     const image = document.getElementById('profile-picture');
     image.src = "assets/apps_profile.png";
     image.classList.toggle('flipped');
+    const musicBanner = document.getElementById('music_banner')
+    musicBanner.style.display  = 'none'
     updateAbout(AboutTexts.ANTARES_LABS, AboutImages.APOSTOLIS)
   }
 
@@ -111,6 +113,8 @@
     image.src = "assets/jovian_artist.jpg";
     image.classList.toggle('flipped');
     updateAbout(AboutTexts.MUSIC, AboutImages.JOVIAN_OUTPOST)
+    const musicBanner = document.getElementById('music_banner')
+    musicBanner.style.display = 'block'
     showJovian()
   }
 
