@@ -26,7 +26,7 @@
 <div>
   <img id="music_banner" src="assets/transparent_jovian_outpost_banner.png" alt="Jovian Outpost" width="665" height="100" style="display: none">
 </div>
-<div id="project-info" class="text-field">
+<div id="project-info" class="text-field" style="visibility: hidden">
   <div id="project-info-container-1" style="display: flex; flex-direction: row">
     <img id="project-info-image" style="width: 200px; height: 200px; margin-right: 20px;">
     <p id="project-info-text"></p>
@@ -93,12 +93,11 @@
   }
 
   function updateAbout(newText, newImage, newLink) {
-    const aboutDiv = document.getElementById("project-info")
     const textElement = document.getElementById("project-info-text");
     const imageElement = document.getElementById("project-info-image")
     const linkElement = document.getElementById('project-info-link')
 
-    aboutDiv.visibility = newText != null ? 'visible' : 'hidden';
+    aboutSection.visibility = newText != null ? 'visible' : 'hidden';
     textElement.textContent = newText;
     imageElement.src = newImage
     linkElement.innerHTML = newLink
@@ -119,6 +118,7 @@
   }
 
   function showKnowtrail() {
+    aboutSection.style.visibility = 'visible'
     updateAbout(
             AboutTexts.KNOWTRAIL,
             AboutImages.KNOWTRAIL,
@@ -129,6 +129,7 @@
   }
 
   function showPokeCalc() {
+    aboutSection.style.visibility = 'visible'
     updateAbout(
             AboutTexts.POKE_CALC,
             AboutImages.POKE_CALC,
@@ -139,10 +140,12 @@
   }
 
   function showAppsAbout() {
+    aboutSection.style.visibility = 'visible'
     updateAbout(AboutTexts.ANTARES_LABS, AboutImages.APPS)
   }
 
   function showJovian() {
+    aboutSection.style.visibility = 'visible'
     updateAbout(
             AboutTexts.JOVIAN_OUTPOST,
             AboutImages.JOVIAN_OUTPOST,
@@ -172,6 +175,7 @@
   const body = document.getElementById('body');
   const appsButton = document.getElementById('appsButton');
   const musicButton = document.getElementById('musicButton');
+  const aboutSection = document.getElementById("project-info")
 
   const AboutTexts = {
     ANTARES_LABS: "My name is Apostolos Apostolidis, but in case this sounds hard, you can just call me Tolis.\n" +
