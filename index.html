@@ -12,7 +12,7 @@
   <p>Tap below to navigate through my portfolio</p>
 </div>
 <div id="image-container">
-  <img id="profile-picture" src="assets/apps_profile.png" alt="Profile Picture" width="200" height="200">
+  <img id="profile-picture" src="assets/apostolis.webp" alt="Profile Picture" width="200" height="200">
 </div>
 <div class="tabbar">
   <button id="appsButton" class="cool-button" onclick="showApps()">Apps</button>
@@ -85,7 +85,7 @@
     apps.classList.add('fade-in');
 
     const image = document.getElementById('profile-picture');
-    image.src = "assets/apps_profile.png";
+    image.src = "assets/apostolis.webp";
     image.classList.toggle('flipped');
     const musicBanner = document.getElementById('music_banner')
     musicBanner.style.display  = 'none'
@@ -139,7 +139,7 @@
   }
 
   function showAppsAbout() {
-    updateAbout(AboutTexts.ANTARES_LABS, AboutImages.APOSTOLIS)
+    updateAbout(AboutTexts.ANTARES_LABS, AboutImages.APPS)
   }
 
   function showJovian() {
@@ -205,6 +205,7 @@
   const AboutImages = {
     ANTARES_LABS: "assets/out_of_the_circle.png",
     APOSTOLIS: "assets/apostolis.webp",
+    APPS: "assets/apps_profile.png",
     OUT_OF_THE_CIRCLE: 'assets/out_of_the_circle.png',
     JOVIAN_OUTPOST: 'assets/jovian_outpost.png',
     KNOWTRAIL: 'assets/knowtrail.png',
