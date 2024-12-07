@@ -95,9 +95,6 @@
     void apps.offsetWidth;
     apps.classList.add('fade-in');
 
-    const image = document.getElementById('profile-picture');
-    image.src = "assets/apostolis.webp";
-    const musicBanner = document.getElementById('music_banner')
     musicBanner.style.display  = 'none'
     updateAbout(AboutTexts.ANTARES_LABS, AboutImages.APPS)
   }
@@ -123,7 +120,6 @@
 
     body.className = 'dark-theme loaded';
     updateAbout(AboutTexts.MUSIC, AboutImages.JOVIAN_OUTPOST)
-    const musicBanner = document.getElementById('music_banner')
     musicBanner.style.display = 'block'
     showJovian()
   }
@@ -179,6 +175,7 @@
   const appsButton = document.getElementById('appsButton');
   const musicButton = document.getElementById('musicButton');
   const aboutSection = document.getElementById("project-info")
+  const musicBanner = document.getElementById('music_banner')
 
   const AboutTexts = {
     ANTARES_LABS: "My name is Apostolos Apostolidis, but in case this sounds hard, you can just call me Tolis.\n" +
