@@ -100,14 +100,17 @@
   }
 
   function updateAbout(newText, newImage, newLink) {
-    const textElement = document.getElementById("project-info-text");
-    const imageElement = document.getElementById("project-info-image")
-    const linkElement = document.getElementById('project-info-link')
 
     aboutSection.visibility = newText != null ? 'visible' : 'hidden';
     textElement.textContent = newText;
     imageElement.src = newImage
-    linkElement.innerHTML = newLink
+    if (newLink != null) {
+      linkElement.style.display = 'flex';
+      linkElement.innerHTML = newLink
+    }
+    else {
+      linkElement.style.display = 'none'
+    }
   }
 
   function showMusic() {
@@ -176,6 +179,9 @@
   const musicButton = document.getElementById('musicButton');
   const aboutSection = document.getElementById("project-info")
   const musicBanner = document.getElementById('music_banner')
+  const textElement = document.getElementById("project-info-text");
+  const imageElement = document.getElementById("project-info-image")
+  const linkElement = document.getElementById('project-info-link')
 
   const AboutTexts = {
     ANTARES_LABS: "My name is Apostolos Apostolidis, but in case this sounds hard, you can just call me Tolis.\n" +
