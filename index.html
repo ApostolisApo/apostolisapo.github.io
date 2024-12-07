@@ -11,8 +11,15 @@
   <p>I write iOS apps and make music</p>
   <p>Tap below to navigate through my portfolio</p>
 </div>
-<div id="image-container">
-  <img id="profile-picture" src="assets/apostolis.webp" alt="Profile Picture" width="200" height="200">
+<div class="flip-container">
+  <div class="flipper">
+    <div class="front">
+      <img src="assets/apostolis.webp" alt="Profile Picture" width="200" height="200">
+    </div>
+    <div class="back">
+      <img src="assets/jovian_artist.jpg" alt="Profile Picture" width="200" height="200">
+    </div>
+  </div>
 </div>
 <div class="tabbar">
   <button id="appsButton" class="cool-button" onclick="showApps()">Apps</button>
@@ -74,6 +81,10 @@
   }
 
   function showApps() {
+    document.querySelectorAll('.flip-container').forEach(container => {
+        container.classList.toggle('flipped');
+    });
+
     Modes.currentMode = Modes.APPS
 
     apps.style.visibility = 'visible';
@@ -86,10 +97,9 @@
 
     const image = document.getElementById('profile-picture');
     image.src = "assets/apostolis.webp";
-    image.classList.toggle('flipped');
     const musicBanner = document.getElementById('music_banner')
     musicBanner.style.display  = 'none'
-    updateAbout(AboutTexts.ANTARES_LABS, AboutImages.APOSTOLIS)
+    updateAbout(AboutTexts.ANTARES_LABS, AboutImages.APPS)
   }
 
   function updateAbout(newText, newImage, newLink) {
@@ -104,13 +114,14 @@
   }
 
   function showMusic() {
+    document.querySelectorAll('.flip-container').forEach(container => {
+      container.classList.toggle('flipped');
+    });
+
     Modes.currentMode = Modes.MUSIC
     apps.style.visibility = 'hidden';
 
     body.className = 'dark-theme loaded';
-    const image = document.getElementById('profile-picture');
-    image.src = "assets/jovian_artist.jpg";
-    image.classList.toggle('flipped');
     updateAbout(AboutTexts.MUSIC, AboutImages.JOVIAN_OUTPOST)
     const musicBanner = document.getElementById('music_banner')
     musicBanner.style.display = 'block'
@@ -150,14 +161,6 @@
             AboutTexts.JOVIAN_OUTPOST,
             AboutImages.JOVIAN_OUTPOST,
             '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/02rEWCdgQ5YnSNDEzeEsqc?utm_source=generator" width="40%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>')
-  }
-
-  function showOutOfCircle() {
-    updateAbout(
-            AboutTexts.OUT_OF_THE_CIRCLE,
-            AboutImages.OUT_OF_THE_CIRCLE,
-            '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5SBjVZApG2wo13T1irqCOt?utm_source=generator" width="40%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">'
-    )
   }
 
   window.addEventListener('load', function () {
