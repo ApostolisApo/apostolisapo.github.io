@@ -37,6 +37,7 @@
   <button class="button" onclick="showAppsAbout()">About</button>
   <button class="button" onclick="showKnowtrail()">KnowTrail</button>
   <button class="button" onclick="showPokeCalc()">Poke Calc</button>
+  <button class="button" onclick="showArticles()">Articles</button>
 </div>
 <div>
   <img id="music_banner" src="assets/transparent_jovian_outpost_banner.png" alt="Jovian Outpost" width="665" height="100" style="display: none">
@@ -113,7 +114,7 @@
   function updateAbout(newText, newImage, newLink) {
 
     aboutSection.visibility = newText != null ? 'visible' : 'hidden';
-    textElement.textContent = newText;
+    textElement.innerHTML = newText;
     imageElement.src = newImage
     if (newLink != null) {
       linkElement.style.display = 'flex';
@@ -158,6 +159,15 @@
             '    <a href="https://apps.apple.com/us/app/poke-xp-calc/id1595679343?itscg=30200&itsct=apps_box_badge&mttnsubad=1595679343" style="display: inline-block;">\n' +
             '    <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1639180800" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />\n' +
             '    </a>\n'
+    )
+  }
+
+  function showArticles() {
+    aboutSection.style.visibility = 'visible'
+    updateAbout(
+            AboutTexts.TALKS,
+            AboutImages.ANTARES_LABS,
+            null
     )
   }
 
@@ -207,6 +217,13 @@
             "Above all, what drives and defines me is a will to create user-friendly and practical applications that allow the user to focus on the task and not on how to beat the interface.",
     MUSIC: "I am a self-learned musician with two big loves: metal and synth music. Most of the music published is written, executed and produced by me.",
     KNOWTRAIL: "KnowTrail is an amazing application for iPhone, Apple Watch, iPad and Vision Pro that allows you to identify the places and music playing around you and also houses a fun knowledge game.",
+    TALKS: "In this page you can find links to articles of mine about my favorite languages, Swift & SwiftUI:\n\n" +
+            "<ul>\n" +
+            "  <li><a href=\"https://medium.com/@apostolisapo/extending-enums-in-swift-8b0c14b07de\" title=\"Extending Enums in Swift\">Extending Enums in Swift</a></li>\n" +
+            "  <li><a href=\"#\" title=\"Building an Apple Watch app in SwiftUI\">Building an Apple Watch app in SwiftUI</a></li>\n" +
+            "  <li><a href=\"#\" title=\"Unit Testing in Swift with Dependency Injection\">Unit Testing in Swift with Dependency Injection</a></li>\n" +
+            "  <li><a href=\"#\" title=\"Handle Firebase & Google authentication on macOS\">Handle Firebase & Google authentication on macOS</a></li>\n" +
+            "</ul>",
     POKE_CALC: "PokeCalc is a small but practical iOS app that allows to track and project your progress in Pokemon GO!",
     JOVIAN_OUTPOST: "From the depths of the solar system an abandoned outpost transmits nostalgic sounds made by synthesized instruments and enhanced by high-energy guitars.\n" +
             "\n" +
