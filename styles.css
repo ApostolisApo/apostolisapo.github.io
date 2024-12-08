@@ -284,3 +284,48 @@ body.loaded .section button {
 #project-info-link a:hover {
     text-decoration: underline; /* Add an underline on hover */
 }
+
+/* Style the container */
+#html-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+/* Style the list */
+.article-links {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 20px 0;
+}
+
+.article-links li {
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+/* Style the links */
+.article-links a {
+    color: #0056b3; /* Professional blue color */
+    text-decoration: none; /* Remove underlines */
+    font-weight: bold;
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth hover effect */
+}
+
+/* Hover and focus effect */
+.article-links a:hover,
+.article-links a:focus {
+    color: #003366; /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+    #html-container {
+        font-size: 16px;
+    }
+
+    .article-links a {
+        font-size: 18px;
+    }
+}

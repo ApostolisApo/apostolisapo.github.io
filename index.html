@@ -38,6 +38,7 @@
   <button class="button" onclick="showKnowtrail()">KnowTrail</button>
   <button class="button" onclick="showPokeCalc()">Poke Calc</button>
   <button class="button" onclick="showArticles()">Articles</button>
+  <button class="button" onclick="showTalks()">Talks</button>
 </div>
 <div>
   <img id="music_banner" src="assets/transparent_jovian_outpost_banner.png" alt="Jovian Outpost" width="665" height="100" style="display: none">
@@ -165,8 +166,17 @@
   function showArticles() {
     aboutSection.style.visibility = 'visible'
     updateAbout(
+            AboutTexts.ARTICLES,
+            AboutImages.APPS,
+            null
+    )
+  }
+
+  function showTalks() {
+    aboutSection.style.visibility = 'visible'
+    updateAbout(
             AboutTexts.TALKS,
-            AboutImages.ANTARES_LABS,
+            AboutImages.TALKS,
             null
     )
   }
@@ -217,13 +227,14 @@
             "Above all, what drives and defines me is a will to create user-friendly and practical applications that allow the user to focus on the task and not on how to beat the interface.",
     MUSIC: "I am a self-learned musician with two big loves: metal and synth music. Most of the music published is written, executed and produced by me.",
     KNOWTRAIL: "KnowTrail is an amazing application for iPhone, Apple Watch, iPad and Vision Pro that allows you to identify the places and music playing around you and also houses a fun knowledge game.",
-    TALKS: "In this page you can find links to articles of mine about my favorite languages, Swift & SwiftUI:\n\n" +
-            "<ul>\n" +
+    ARTICLES: "In this page you can find links to articles of mine about my favorite languages, Swift & SwiftUI:\n\n" +
+            "<ul class=\"article-links\">\n" +
             "  <li><a href=\"https://medium.com/@apostolisapo/extending-enums-in-swift-8b0c14b07de\" title=\"Extending Enums in Swift\">Extending Enums in Swift</a></li>\n" +
-            "  <li><a href=\"#\" title=\"Building an Apple Watch app in SwiftUI\">Building an Apple Watch app in SwiftUI</a></li>\n" +
-            "  <li><a href=\"#\" title=\"Unit Testing in Swift with Dependency Injection\">Unit Testing in Swift with Dependency Injection</a></li>\n" +
-            "  <li><a href=\"#\" title=\"Handle Firebase & Google authentication on macOS\">Handle Firebase & Google authentication on macOS</a></li>\n" +
+            "  <li><a href=\"https://medium.com/@apostolisapo/building-an-apple-watch-app-in-swiftui-b58ebfcb7891\" title=\"Building an Apple Watch app in SwiftUI\">Building an Apple Watch app in SwiftUI</a></li>\n" +
+            "  <li><a href=\"https://medium.com/@apostolisapo/unit-testing-in-swift-with-dependency-injection-5396ee65e5c9\" title=\"Unit Testing in Swift with Dependency Injection\">Unit Testing in Swift with Dependency Injection</a></li>\n" +
+            "  <li><a href=\"https://medium.com/@apostolisapo/handle-firebase-google-authentication-on-macos-74531cba163d\" title=\"Handle Firebase & Google authentication on macOS\">Handle Firebase & Google authentication on macOS</a></li>\n" +
             "</ul>",
+    TALKS: '<a href="https://www.meetup.com/cocoaheads-goteborg/events/302917332/" title="Learn about VIPER: A radical iOS architecture" style="font-family: Arial, sans-serif; text-decoration: none; color: #0056b3; font-weight: bold;">VIPER: A radical iOS architecture (25/09/2024 @ Gothenburg, Sweden)</a>',
     POKE_CALC: "PokeCalc is a small but practical iOS app that allows to track and project your progress in Pokemon GO!",
     JOVIAN_OUTPOST: "From the depths of the solar system an abandoned outpost transmits nostalgic sounds made by synthesized instruments and enhanced by high-energy guitars.\n" +
             "\n" +
