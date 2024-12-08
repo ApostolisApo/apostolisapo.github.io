@@ -129,23 +129,6 @@ body.loaded .section button {
     }
 }
 
- .cool-button {
-     background-color: white;
-     border: 1px solid red;
-     border-radius: 12px;
-     color: black;
-     font-weight: bold;
-     padding: 10px 20px;
-     font-size: 16px;
-     cursor: pointer;
-     transition: background-color 0.3s, color 0.3s;
- }
-
-.cool-button:hover {
-    background-color: red;
-    color: white;
-}
-
 .flip-container {
     perspective: 1000px;
     width: 200px; /* Adjust size as needed */
@@ -178,4 +161,70 @@ body.loaded .section button {
 .back {
     background-color: #f8f8f8;
     transform: rotateY(180deg);
+}
+
+
+/* Container for spacing if needed */
+.button-container {
+    display: flex;
+    gap: 15px;
+}
+
+/* Base Button Styles */
+.button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/* Primary Button */
+.button {
+    background-color: #333333;
+    border: 1px solid transparent;
+}
+
+.button:hover {
+    background-color: #1a1a1a;
+    box-shadow: 0 6px 10px rgba(51, 51, 51, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.button.secondary {
+    background-color: #6C757D;
+    color: #fff;
+}
+
+.button.secondary:hover {
+    background-color: #565e64;
+}
+
+/* Outline Button */
+.button.outline {
+    background-color: transparent;
+    color: #333333;
+    border: 2px solid #333333;
+}
+
+.button.outline:hover {
+    background-color: #333333;
+    color: #fff;
+}
+
+/* Add Active State */
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Accessibility */
+.button:focus {
+    outline: 2px solid #666666;
+    outline-offset: 2px;
 }
