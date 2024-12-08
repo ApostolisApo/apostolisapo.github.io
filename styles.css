@@ -59,6 +59,7 @@ body.loaded .section button {
 .section {
     display: flex; /* Enables flexbox layout */
     flex-direction: row; /* Arranges items horizontally */
+    gap: 15px;
 }
 
 #content button {
