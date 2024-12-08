@@ -228,3 +228,59 @@ body.loaded .section button {
     outline: 2px solid #666666;
     outline-offset: 2px;
 }
+
+/* Container Styling */
+#project-info {
+    visibility: hidden;
+    background-color: #f9f9f9; /* Subtle background for contrast */
+    border: 1px solid #ddd; /* Light border for structure */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    max-width: 600px; /* Limit the overall width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Professional font choice */
+    margin: 20px auto; /* Centered alignment */
+}
+
+/* Content Styling */
+#project-info-content {
+    display: flex;
+    align-items: center; /* Align content vertically */
+    gap: 20px; /* Space between image and text */
+}
+
+/* Image Styling */
+#project-info-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px; /* Rounded edges */
+    object-fit: cover; /* Ensure the image fits nicely */
+    border: 1px solid #ccc; /* Subtle border */
+}
+
+/* Text Styling */
+#project-info-text {
+    color: #333; /* Dark text for readability */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Link Container Styling */
+#project-info-link {
+    margin-top: 15px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Ensure text alignment is centered */
+}
+
+#project-info-link a {
+    color: #007BFF; /* Professional blue color */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#project-info-link a:hover {
+    text-decoration: underline; /* Add an underline on hover */
+}
