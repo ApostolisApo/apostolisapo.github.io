@@ -260,6 +260,7 @@ body.loaded .section button {
     margin: 20px auto; /* Centered alignment */
 }
 
+
 /* Content Styling */
 #project-info-content {
     display: flex;
@@ -345,5 +346,12 @@ body.loaded .section button {
 
     .article-links a {
         font-size: 18px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #project-info {
+        background-color: #1a1a1a; /* Dark mode background */
+        color: #fff; /* Light text color for contrast */
     }
 }
