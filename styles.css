@@ -195,6 +195,24 @@ body.loaded .section button {
     transform: translateY(-2px);
 }
 
+/* Base Button Styles */
+.buttonLike {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/* Primary Button */
+.buttonLike {
+    background-color: #4D4D4D;
+    border: 1px solid transparent;
+}
+
 /* Secondary Button */
 .button.secondary {
     background-color: #6C757D;
