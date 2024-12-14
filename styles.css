@@ -352,6 +352,8 @@ body.loaded .section button {
 @media (prefers-color-scheme: dark) {
     #project-info {
         background-color: #1a1a1a; /* Dark mode background */
-        color: #fff; /* Light text color for contrast */
+    }
+    #project-info-text {
+        color: #ffffff;
     }
 }
